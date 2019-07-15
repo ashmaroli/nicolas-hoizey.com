@@ -7,6 +7,8 @@ puts
 require 'jekyll'
 require 'memory_profiler'
 
+Jekyll::PluginManager.require_from_bundler
+
 puts %x(free -h)
 puts
 
