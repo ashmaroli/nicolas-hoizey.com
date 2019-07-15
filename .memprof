@@ -12,13 +12,13 @@ Jekyll::PluginManager.require_from_bundler
 puts %x(free -h)
 puts
 
-# report = MemoryProfiler.report(allow_files: 'lib/jekyll/') do
+report = MemoryProfiler.report(allow_files: 'lib/jekyll/') do
   Jekyll::Commands::Build.process(
     "source"      => File.expand_path(__dir__),
     "destination" => File.expand_path("_site", __dir__),
     "verbose"     => false
   )
-# end
+end
 
 # puts "\nGenerating results..\n\n"
 
