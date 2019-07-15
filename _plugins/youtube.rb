@@ -60,6 +60,7 @@ class YouTube < Liquid::Tag
   end
 
   def render(context)
+    return ''
 
     if (Cache.has_key?(@id)) then
         return Cache[@id]
