@@ -1,10 +1,5 @@
 # Frozen-string-literal: true
-# Copyright: 2012 - 2018 - MIT License
 # Encoding: utf-8
-
-require "fastimage"
-require "liquid/tag/parser"
-require "nokogiri"
 
 module Jekyll
   module Assets
@@ -23,6 +18,24 @@ module Jekyll
       # they'll never get it. That's not very good.
       rescue Sass::SyntaxError => e
         e_sass(e, {args: args, ctx: ctx})
+      end
+    end
+
+    class Logger
+      PREFIX = "Assets:"
+
+      def self.with_timed_logging(msg, type: :debug)
+        s, t, out = Time.now, nil, yield
+
+        Logger.send(type) do
+          format("\n#{msg}", {
+            time: "#{t = Time.now - s}s",
+          })
+        end
+
+        {
+          result: out, time: t
+        }
       end
     end
   end
