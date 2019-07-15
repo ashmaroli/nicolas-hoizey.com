@@ -24,8 +24,6 @@ module Jekyll
     end
 
     class Logger
-      PREFIX = "Assets:"
-
       def self.with_timed_logging(msg, type: :debug)
         s, t, out = Time.now, nil, yield
 
