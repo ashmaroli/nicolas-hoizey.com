@@ -3,14 +3,7 @@ source 'https://rubygems.org'
 # gem 'jekyll', git: 'https://github.com/jekyll/jekyll.git', ref: 'refs/pull/7136/head'
 # gem 'jekyll', git: 'https://github.com/jekyll/jekyll.git'
 
-if ENV['JEKYLL_VERSION']
-  gem 'jekyll', ENV['JEKYLL_VERSION']
-elsif ENV['JEKYLL_EDGE']
-  gem 'jekyll', github: 'jekyll/jekyll'
-else
-  gem 'jekyll'
-end
-
+gem 'jekyll', github: 'ashmaroli/jekyll', branch: '4-on-3'
 gem 'memory_profiler'
 
 gem 'liquid-c'
