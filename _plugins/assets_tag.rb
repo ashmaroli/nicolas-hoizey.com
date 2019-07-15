@@ -5,6 +5,8 @@ module Jekyll
   module Assets
     class Tag < Liquid::Tag
       def render(ctx)
+        return ''
+
         env = ctx.registers[:site].sprockets; args, asset = render_raw(ctx)
         return_or_build(ctx, args: args, asset: asset) do
           HTML.build(args: args, asset: asset, ctx: ctx)
