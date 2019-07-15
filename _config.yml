@@ -61,6 +61,7 @@ exclude:
   - README.md
   - LICENSE.md
   - tags/*.md
+  - tags/spip.html
   - Rakefile
   - vendor
 include:
