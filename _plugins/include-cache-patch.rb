@@ -26,7 +26,8 @@ module JekyllIncludeCache
     end
 
     def key(path, params)
-      Digest::MD5.hexdigest(path.to_s + params.to_s)
+      elements = "#{path}#{params}"
+      Digest::MD5.hexdigest(elements)
     end
   end
 end
