@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require "digest/md5"
+
 module JekyllIncludeCache
   class Tag < Jekyll::Tags::IncludeTag
     def render(context)
@@ -13,6 +15,18 @@ module JekyllIncludeCache
       else
         JekyllIncludeCache.cache[key] = super
       end
+    end
+
+    private
+
+    def path(context)
+      site   = context.registers[:site]
+      file   = render_variable(context) || @file
+      locate_include_file(context, file, site.safe)
+    end
+
+    def key(path, params)
+      Digest::MD5.hexdigest(path.to_s + params.to_s)
     end
   end
 end
