@@ -21,7 +21,7 @@ group :jekyll_plugins do
   gem 'jekyll-include-cache'
   gem 'jekyll-microtypo'
   gem 'jekyll-postfiles'
-  # gem 'jekyll-tagging'
+  gem 'jekyll-tagging'
   gem 'jekyll-webmention_io'
   gem 'liquid-md5'
 end
