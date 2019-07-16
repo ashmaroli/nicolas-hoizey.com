@@ -32,8 +32,7 @@ module JekyllIncludeCache
     def key(path, params)
       self.class.cache[path] ||= {}
       self.class.cache[path][params] ||= begin
-        puts params.to_s.cyan
-        elements = "#{path}#{params}"
+        elements = "#{path}#{params.hash}"
         Digest::MD5.hexdigest(elements)
       end
     end
