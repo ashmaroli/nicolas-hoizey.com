@@ -12,7 +12,7 @@ Jekyll::PluginManager.require_from_bundler
 puts %x(free -h)
 puts
 
-report = MemoryProfiler.report(allow_files: 'lib/jekyll-include') do
+report = MemoryProfiler.report(allow_files: '_plugins') do
   Jekyll::Commands::Build.process(
     "source"      => File.expand_path(__dir__),
     "destination" => File.expand_path("_site", __dir__),
