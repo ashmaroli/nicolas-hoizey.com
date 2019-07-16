@@ -4,10 +4,14 @@ require "digest/md5"
 
 module JekyllIncludeCache
   class Tag < Jekyll::Tags::IncludeTag
+    def self.cache
+      @cache ||= {}
+    end
+
     def render(context)
       path   = path(context)
       params = parse_params(context) if @params
-      key = key(path, params)
+      key    = key(path, params)
       return unless path
 
       if JekyllIncludeCache.cache.key?(key)
@@ -26,8 +30,11 @@ module JekyllIncludeCache
     end
 
     def key(path, params)
-      elements = "#{path}#{params}"
-      Digest::MD5.hexdigest(elements)
+      self.class.cache[path] ||= {}
+      self.class.cache[path][params] ||= begin
+        elements = "#{path}#{params}"
+        Digest::MD5.hexdigest(elements)
+      end
     end
   end
 end
