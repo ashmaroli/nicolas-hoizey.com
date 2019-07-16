@@ -2,7 +2,7 @@ module Jekyll
   module TagsMicroformatFilter
 
     def tags_microformat(html)
-      return html if html.nil?
+      return html unless String === html
 
       tags = html
 
