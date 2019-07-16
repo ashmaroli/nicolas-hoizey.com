@@ -12,17 +12,17 @@ Jekyll::PluginManager.require_from_bundler
 puts %x(free -h)
 puts
 
-# report = MemoryProfiler.report do
+report = MemoryProfiler.report do
   Jekyll::Commands::Build.process(
     "source"      => File.expand_path(__dir__),
     "destination" => File.expand_path("_site", __dir__),
     "verbose"     => false
   )
-# end
+end
 
-# puts "\nGenerating results..\n\n"
+puts "\nGenerating results..\n\n"
 
-# puts %x(free -h)
-# puts
+puts %x(free -h)
+puts
 
-# report.pretty_print(scale_bytes: true, normalize_paths: true, color_output: false)
+report.pretty_print(scale_bytes: true, normalize_paths: true, color_output: false)
