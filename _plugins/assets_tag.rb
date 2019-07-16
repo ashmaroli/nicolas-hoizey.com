@@ -22,6 +22,8 @@ module Jekyll
         e_sass(e, {args: args, ctx: ctx})
       end
     end
+    
+    Liquid::Template.register_tag "asset", Jekyll::Assets::Tag
 
     class Logger
       def self.with_timed_logging(msg, type: :debug)
