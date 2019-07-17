@@ -11,6 +11,7 @@ gem 'yt'
 gem 'autoprefixer-rails'
 gem 'uglifier'
 gem 'hash-joiner'
+gem 'kramdown', github: 'ashmaroli/kramdown', branch: 'gemspec'
 
 group :jekyll_plugins do
   gem 'jekyll-algolia'
