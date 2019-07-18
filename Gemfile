@@ -20,7 +20,7 @@ group :jekyll_plugins do
   gem 'jekyll-cloudinary' # :path => '/Users/nhoizey/Dropbox/Personnel/Devs/_jekyll-plugins/jekyll-cloudinary/'
   gem 'jekyll-firstimage'
   gem 'jekyll-include-cache'
-  # gem 'jekyll-microtypo'
+  gem 'jekyll-microtypo'
   gem 'jekyll-postfiles'
   gem 'jekyll-tagging'
   gem 'jekyll-webmention_io'
