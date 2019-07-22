@@ -6,7 +6,6 @@ source 'https://rubygems.org'
 gem 'jekyll', github: 'ashmaroli/jekyll', branch: '4-on-3'
 gem 'memory_profiler'
 
-gem 'liquid', github: 'Shopify/liquid'
 gem 'liquid-c'
 gem 'yt'
 gem 'autoprefixer-rails'
