@@ -18,11 +18,9 @@ module Jekyll
     end
 
     def embed(content)
-      result = String.new('')
-      content.each_line do |line|
+      content.lines.each_with_object(String.new('')) do |line, result|
         result << convert(line)
       end
-      result
     end
   end
 
