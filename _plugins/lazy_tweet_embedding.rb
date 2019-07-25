@@ -18,7 +18,11 @@ module Jekyll
     end
 
     def embed(content)
-      content.lines.collect {|line| convert(line) }.join
+      result = String.new('')
+      content.each_line do |line|
+        result << convert(line)
+      end
+      result
     end
   end
 
