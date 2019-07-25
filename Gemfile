@@ -19,7 +19,7 @@ group :jekyll_plugins do
   # gem 'jekyll-assets'
   gem 'jekyll-cloudinary' # :path => '/Users/nhoizey/Dropbox/Personnel/Devs/_jekyll-plugins/jekyll-cloudinary/'
   gem 'jekyll-firstimage'
-  gem 'jekyll-include-cache' #, github: 'benbalter/jekyll-include-cache'
+  gem 'jekyll-include-cache', github: 'benbalter/jekyll-include-cache'
   gem 'jekyll-microtypo'
   gem 'jekyll-postfiles'
   gem 'jekyll-tagging'
