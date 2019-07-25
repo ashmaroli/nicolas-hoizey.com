@@ -203,13 +203,13 @@ cloudinary:
         class: logo
 
 # Archives
-# jekyll-archives:
-#   enabled:
-#     - year
-#     - month
-#   layouts:
-#     year: archives-year
-#     month: archives-month
-#   permalinks:
-#     year: /:year/
-#     month: /:year/:month/
+jekyll-archives:
+  enabled:
+    - year
+    - month
+  layouts:
+    year: archives-year
+    month: archives-month
+  permalinks:
+    year: /:year/
+    month: /:year/:month/
